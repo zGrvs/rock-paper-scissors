@@ -20,25 +20,51 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-function playRound(player, computer) {
+function game() {
 
-    console.log(computer);
+    let playerScore = 0;
+    let computerScore = 0;
 
-    if (player === computer) {
-        return "It's a tie!";
+    console.log("Let's play rock, paper, scissors! First to five points wins!")
+
+    while (playerScore < 5 && computerScore < 5) {
+        function playRound(player, computer) {
+
+                console.log(`Computer chose: ${computer}`);
+
+                if (player === computer) {
+                    return "It's a tie!";
+                }
+
+                switch (player) {
+                    case "rock":
+                        return computer === "paper" ? "You lose! Paper covers rock." : "You win! Rock smashes scissors.";
+                    case "paper":
+                        return computer === "scissors" ? "You lose! Scissors cutss paper." : "You win! Paper covers rock.";
+                    case "scissors":
+                        return computer === "rock" ? "You lose! Rock smashes scissors." : "You win! Scissors cuts paper.";
+                    default:
+                        return "error";
+                }
+        }
+
+        let winner = playRound(getPlayerChoice(), getComputerChoice());
+        console.log(winner)
+        if (winner.includes("win")) {
+            playerScore++;
+        } else if (winner.includes("lose")) {
+            computerScore++;
+        }
+
+        console.log(`Score: Player - ${playerScore} | Computer - ${computerScore}`);
     }
 
-    switch (player) {
-        case "rock":
-            return computer === "paper" ? "You lose! Paper beats rock." : "You win! Rock beats scissors.";
-        case "paper":
-            return computer === "scissors" ? "You lose! Scissors beats paper." : "You win! Paper beats rock.";
-        case "scissors":
-            return computer === "rock" ? "You lose! Rock beats scissors." : "You win! Scissors beats paper.";
-        default:
-            return "error";
+    if (playerScore > computerScore) {
+        console.log("You win the game!");
+    } else {
+        console.log("Computer wins the game! Try again?")
     }
+
 }
 
-
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+game();
