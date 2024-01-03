@@ -1,0 +1,34 @@
+body {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+div.selections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+div.selections div {
+    border: solid  black 5px;
+    border-radius: 16px;
+    padding: 100px;
+    /* display: flex; */
+}
+
+.rock, .paper, .scissors {
+    display: block;
+}
+
+.begin {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 1%;
+    margin-bottom: 10%;
+}
+
+.hidden {
+    visibility: hidden;
+}
