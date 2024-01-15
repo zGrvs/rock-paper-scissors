@@ -4,6 +4,16 @@ body {
     align-items: center; */
 }
 
+.start-screen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 div.selections {
     display: flex;
     justify-content: space-around;
@@ -22,7 +32,7 @@ div.selections div {
     display: block;
 }
 
-.begin {
+.instructions {
     text-align: center;
     font-size: 30px;
     margin-top: 1%;
@@ -31,4 +41,8 @@ div.selections div {
 
 .hidden {
     visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }

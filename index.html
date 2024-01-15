@@ -7,13 +7,27 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 </head>
-<body>
-    <div class="begin">Make your selection</div>
 
-    <div class="selections">
-        <div class="rock">Rock</div>
-        <div class="paper">Paper</div>
-        <div class="scissors">Scissors</div>
+<body>
+    <div class="start-screen visible">
+        <div class="title">ROCK PAPER SCISSORS!</div>
+        <button class="play">PLAY</button>
+    </div>
+
+    <div class="game hidden">
+        <div class="instructions">Make your selection</div>
+        <div class="selections">
+            <div class="rock">Rock</div>
+            <div class="paper">Paper</div>
+            <div class="scissors">Scissors</div>
+        </div>
+        <div class="result"></div>
+        <div class="score"></div>
+    </div>
+
+    <div class="end-screen hidden">
+        <div class="end-text"></div>
+        <button class="again">Play again?</button>
     </div>
 </body>
 </html>
